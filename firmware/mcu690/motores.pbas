@@ -1,0 +1,9 @@
+program motores
+
+main:
+
+
+executa:
+
+        goto executa
+end.

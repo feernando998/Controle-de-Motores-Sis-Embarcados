@@ -1,0 +1,9 @@
+program displays
+
+main:
+
+
+executa:
+
+        goto executa
+end.

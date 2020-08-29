@@ -1,0 +1,34 @@
+[DeviceName]
+Value=P16F887
+[DeviceClock]
+Value=4
+[MainUnit]
+Value=displays.pbas
+[DeviceFlags]
+Count=10
+Value0=_XT_OSC = $3FF9
+Value1=_EXTRC_OSC_CLKOUT = $3FFF
+Value2=_WDT_OFF = $3FF7
+Value3=_PWRTE_ON = $3FEF
+Value4=_MCLRE_OFF = $3FDF
+Value5=_CP_OFF = $3FFF
+Value6=_CPD_OFF = $3FFF
+Value7=_BOR_OFF = $3CFF
+Value8=_FCMEN_OFF = $37FF
+Value9=_LVP_OFF = $2FFF
+[BuildSimDebug]
+Build=0
+SimDebug=0
+[ProjectFiles]
+Count=0
+[OtherFiles]
+Count=0
+[TabIndex]
+Value=0
+[SearchPath]
+Count=3
+Value0=C:\Program Files (x86)\Mikroelektronika\mikroBasic\Defs\
+Value1=C:\Program Files (x86)\Mikroelektronika\mikroBasic\Uses\p16\
+Value2=D:\Faculdade\10º Termo\Projeto de Sistemas Embarcados II\Trabalho II\Controle-de-Motores-Sis-Embarcados\firmware\mcu887\
+[EEPROMinfo]
+isused=0
