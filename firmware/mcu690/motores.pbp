@@ -22,7 +22,8 @@ SimDebug=0
 [ProjectFiles]
 Count=0
 [OtherFiles]
-Count=0
+Count=1
+Value0=D:\Faculdade\10º Termo\Projeto de Sistemas Embarcados II\Trabalho II\Controle-de-Motores-Sis-Embarcados\firmware\mcu690\motores.pbas
 [TabIndex]
 Value=0
 [SearchPath]

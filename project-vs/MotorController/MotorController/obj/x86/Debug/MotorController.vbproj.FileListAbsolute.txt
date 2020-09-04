@@ -7,3 +7,6 @@ C:\Users\pedro\OneDrive\faculdade\10_Semestre\Projeto de Sistemas Embarcados\Con
 C:\Users\pedro\OneDrive\faculdade\10_Semestre\Projeto de Sistemas Embarcados\Controle-de-Motores-Sis-Embarcados\project-vs\MotorController\MotorController\obj\x86\Debug\MotorController.exe
 C:\Users\pedro\OneDrive\faculdade\10_Semestre\Projeto de Sistemas Embarcados\Controle-de-Motores-Sis-Embarcados\project-vs\MotorController\MotorController\obj\x86\Debug\MotorController.xml
 C:\Users\pedro\OneDrive\faculdade\10_Semestre\Projeto de Sistemas Embarcados\Controle-de-Motores-Sis-Embarcados\project-vs\MotorController\MotorController\obj\x86\Debug\MotorController.pdb
+D:\Faculdade\10º Termo\Projeto de Sistemas Embarcados II\Trabalho II\Controle-de-Motores-Sis-Embarcados\project-vs\MotorController\MotorController\obj\x86\Debug\MotorController.exe
+D:\Faculdade\10º Termo\Projeto de Sistemas Embarcados II\Trabalho II\Controle-de-Motores-Sis-Embarcados\project-vs\MotorController\MotorController\obj\x86\Debug\MotorController.xml
+D:\Faculdade\10º Termo\Projeto de Sistemas Embarcados II\Trabalho II\Controle-de-Motores-Sis-Embarcados\project-vs\MotorController\MotorController\obj\x86\Debug\MotorController.pdb

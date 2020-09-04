@@ -1,9 +1,80 @@
 program motores
 
-main:
+dim recebe as string[6]
+dim valor  as integer
+dim mcp    as integer
 
+main:
+TRISA=%11111111
+TRISB=%00111111
+TRISC=%00000000
+INTCON=%00000000
+ANSEL=%00000000
+ANSELH=%00000000
+portA=0
+portB=0
+portC=0
+
+USART_INIT(9600)
+
+portc.0 = 1 portc.1 = 1 portc.2 = 1
+
+SPI_INIT
+
+clearbit(portc,0) Spi_Write(17) Spi_Write(0) setbit(portc,0)
+clearbit(portc,1) Spi_Write(17) Spi_Write(0) setbit(portc,1)
+clearbit(portc,2) Spi_Write(17) Spi_Write(0) setbit(portc,2)
 
 executa:
+        if Usart_Data_Ready() > 0 then
+           Usart_Read_Text(recebe,"/")
+           valor = StrToInt(recebe)
+           
+           if (valor > 999) and (valor < 4256) then
+           
+              if (valor >= 1000) And (valor < 1256) then
+                 mcp = 1
+                 valor = valor - 1000
+              end if
+              if (valor >= 2000) And (valor < 2256) then
+                 mcp = 2
+                 valor = valor - 2000
+              end if
+              if (valor >= 3000) And (valor < 3256) then
+                 mcp = 3
+                 valor = valor - 3000
+              end if
+              if (valor >= 4000) And (valor < 4256) then
+                  mcp = 4
+                  valor = valor - 4000
+              end if
+              
+              if mcp = 1 then
+                 clearbit(portc,0)
+              end if
+              if mcp = 2 then
+                 clearbit(portc,1)
+              end if
+              if mcp = 3 then
+                 clearbit(portc,2)
+              end if
+              
+              if mcp = 4 then
+                 portc.0 = 0
+                 portc.1 = 0
+                 portc.2 = 0
+              end if
+              
+              spi_write(17)
+              spi_Write(valor)
+              
+              portc.0 = 1
+              portc.1 = 1
+              portc.2 = 1
+              
+           end if
+           
+        end if
 
         goto executa
 end.
