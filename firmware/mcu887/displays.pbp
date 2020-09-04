@@ -22,13 +22,15 @@ SimDebug=0
 [ProjectFiles]
 Count=0
 [OtherFiles]
-Count=0
+Count=1
+Value0=C:\Users\pedro\OneDrive\faculdade\10_Semestre\Projeto de Sistemas Embarcados\Controle-de-Motores-Sis-Embarcados\firmware\mcu887\displays.pbas
 [TabIndex]
 Value=0
 [SearchPath]
-Count=3
+Count=4
 Value0=C:\Program Files (x86)\Mikroelektronika\mikroBasic\Defs\
 Value1=C:\Program Files (x86)\Mikroelektronika\mikroBasic\Uses\p16\
-Value2=D:\Faculdade\10º Termo\Projeto de Sistemas Embarcados II\Trabalho II\Controle-de-Motores-Sis-Embarcados\firmware\mcu887\
+Value2=C:\Users\pedro\OneDrive\faculdade\10_Semestre\Projeto de Sistemas Embarcados\Controle-de-Motores-Sis-Embarcados\firmware\mcu887\
+Value3=D:\Faculdade\10º Termo\Projeto de Sistemas Embarcados II\Trabalho II\Controle-de-Motores-Sis-Embarcados\firmware\mcu887\
 [EEPROMinfo]
 isused=0

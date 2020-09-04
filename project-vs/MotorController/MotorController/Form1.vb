@@ -16,6 +16,7 @@ ErroAbertura:
         Dim textoInserido As String
         Dim valorConvertido As Integer
         Dim porcentagem As Integer
+        Dim stringAEnviar As String
 
         textoInserido = txtVel.Text
 
@@ -29,21 +30,33 @@ ErroAbertura:
         If cmbMotor.SelectedIndex = 0 Then
             lblMotor1.Text = porcentagem.ToString + " %"
             txtEnviado.Text = ""
-            txtEnviado.Text = (valorConvertido + 1000).ToString + "-" + porcentagem.ToString + "/"
+
+            stringAEnviar = (valorConvertido + 1000).ToString + "-" + porcentagem.ToString + "/"
+            txtEnviado.Text = stringAEnviar
+            SerialPort1.Write(stringAEnviar)
         ElseIf cmbMotor.SelectedIndex = 1 Then
             lblMotor2.Text = porcentagem.ToString + " %"
             txtEnviado.Text = ""
-            txtEnviado.Text = (valorConvertido + 2000).ToString + "-" + porcentagem.ToString + "/"
+
+            stringAEnviar = (valorConvertido + 2000).ToString + "-" + porcentagem.ToString + "/"
+            txtEnviado.Text = stringAEnviar
+            SerialPort1.Write(stringAEnviar)
         ElseIf cmbMotor.SelectedIndex = 2 Then
             lblMotor3.Text = porcentagem.ToString + " %"
             txtEnviado.Text = ""
-            txtEnviado.Text = (valorConvertido + 3000).ToString + "-" + porcentagem.ToString + "/"
+
+            stringAEnviar = (valorConvertido + 3000).ToString + "-" + porcentagem.ToString + "/"
+            txtEnviado.Text = stringAEnviar
+            SerialPort1.Write(stringAEnviar)
         ElseIf cmbMotor.SelectedIndex = 3 Then
             lblMotor1.Text = porcentagem.ToString + " %"
             lblMotor2.Text = porcentagem.ToString + " %"
             lblMotor3.Text = porcentagem.ToString + " %"
             txtEnviado.Text = ""
-            txtEnviado.Text = (valorConvertido + 4000).ToString + "-" + porcentagem.ToString + "/"
+
+            stringAEnviar = (valorConvertido + 4000).ToString + "-" + porcentagem.ToString + "/"
+            txtEnviado.Text = stringAEnviar
+            SerialPort1.Write(stringAEnviar)
         End If
 
     End Sub

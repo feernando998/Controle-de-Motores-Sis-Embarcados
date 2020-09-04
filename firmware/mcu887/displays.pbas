@@ -1,9 +1,41 @@
 program displays
 
-main:
+dim valorConvertido as string[6]
+dim porcent as string[6]
+dim valorPorcent  as integer
 
+main:
+TRISA=%11111111
+TRISB=%00111111
+TRISC=%00000000
+INTCON=%00000000
+ANSEL=%00000000
+ANSELH=%00000000
+portA=0
+portB=0
+portC=0
+
+USART_INIT(9600)
+
+I2C_INIT(100000)
 
 executa:
 
+        if Usart_Data_Ready() > 0 then
+           Usart_Read_Text(valorConvertido,"-")
+           Usart_Read_Text(porcent,"/")
+           valorPorcent = StrToInt(porcent)
+
+           Usart_Write_Text(valorConvertido)
+           delay_ms(5)
+           USART_Write("/")
+           delay_ms(5)
+        end if
+
         goto executa
+        
+escreve_I2C:
+
+
+       return
 end.
