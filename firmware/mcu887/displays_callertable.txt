@@ -1,7 +1,6 @@
 main
 	I2C_Init
 	USART_Init
-	USART_Write
 	Usart_Write_Text
 		USART_Write
 	StrToInt

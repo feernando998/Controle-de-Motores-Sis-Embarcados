@@ -12,7 +12,7 @@ ErroAbertura:
 
     Private Sub btnEnviar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEnviar.Click
         '5V     - 255
-        '12V    - 612   - 100%
+
         Dim textoInserido As String
         Dim valorConvertido As Integer
         Dim porcentagem As Integer
@@ -20,8 +20,8 @@ ErroAbertura:
 
         textoInserido = txtVel.Text
 
-        valorConvertido = (CInt(textoInserido) * 612) / 12
-        porcentagem = (valorConvertido * 100) / 612
+        valorConvertido = (CInt(textoInserido) * 255) / 5
+        porcentagem = (valorConvertido * 100) / 255
 
         If porcentagem > 99 Then
             porcentagem = 99

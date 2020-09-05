@@ -24,23 +24,23 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.cmbMotor = New System.Windows.Forms.ComboBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.txtVel = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.lblMotor1 = New System.Windows.Forms.Label()
-        Me.lblMotor2 = New System.Windows.Forms.Label()
-        Me.lblMotor3 = New System.Windows.Forms.Label()
-        Me.btnEnviar = New System.Windows.Forms.Button()
-        Me.txtRecebido = New System.Windows.Forms.TextBox()
-        Me.txtEnviado = New System.Windows.Forms.TextBox()
-        Me.Label9 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.txtEnviado = New System.Windows.Forms.TextBox()
+        Me.txtRecebido = New System.Windows.Forms.TextBox()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.btnEnviar = New System.Windows.Forms.Button()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.txtVel = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.cmbMotor = New System.Windows.Forms.ComboBox()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.lblMotor3 = New System.Windows.Forms.Label()
+        Me.lblMotor2 = New System.Windows.Forms.Label()
+        Me.lblMotor1 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         Me.SerialPort1 = New System.IO.Ports.SerialPort(Me.components)
@@ -62,6 +62,40 @@ Partial Class Form1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Mensagens"
         '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(14, 60)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(46, 13)
+        Me.Label10.TabIndex = 14
+        Me.Label10.Text = "Enviado"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(7, 34)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(53, 13)
+        Me.Label9.TabIndex = 15
+        Me.Label9.Text = "Recebido"
+        '
+        'txtEnviado
+        '
+        Me.txtEnviado.Enabled = False
+        Me.txtEnviado.Location = New System.Drawing.Point(66, 57)
+        Me.txtEnviado.Name = "txtEnviado"
+        Me.txtEnviado.Size = New System.Drawing.Size(254, 20)
+        Me.txtEnviado.TabIndex = 5
+        '
+        'txtRecebido
+        '
+        Me.txtRecebido.Enabled = False
+        Me.txtRecebido.Location = New System.Drawing.Point(66, 31)
+        Me.txtRecebido.Name = "txtRecebido"
+        Me.txtRecebido.Size = New System.Drawing.Size(254, 20)
+        Me.txtRecebido.TabIndex = 4
+        '
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.btnEnviar)
@@ -76,30 +110,14 @@ Partial Class Form1
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Controle"
         '
-        'cmbMotor
+        'btnEnviar
         '
-        Me.cmbMotor.FormattingEnabled = True
-        Me.cmbMotor.Items.AddRange(New Object() {"Motor 1", "Motor 2", "Motor 3", "Todos"})
-        Me.cmbMotor.Location = New System.Drawing.Point(54, 83)
-        Me.cmbMotor.Name = "cmbMotor"
-        Me.cmbMotor.Size = New System.Drawing.Size(99, 21)
-        Me.cmbMotor.TabIndex = 2
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(51, 28)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(102, 13)
-        Me.Label2.TabIndex = 12
-        Me.Label2.Text = "Velocidade (0 - 12v)"
-        '
-        'txtVel
-        '
-        Me.txtVel.Location = New System.Drawing.Point(54, 44)
-        Me.txtVel.Name = "txtVel"
-        Me.txtVel.Size = New System.Drawing.Size(99, 20)
-        Me.txtVel.TabIndex = 1
+        Me.btnEnviar.Location = New System.Drawing.Point(10, 110)
+        Me.btnEnviar.Name = "btnEnviar"
+        Me.btnEnviar.Size = New System.Drawing.Size(187, 23)
+        Me.btnEnviar.TabIndex = 3
+        Me.btnEnviar.Text = "Enviar"
+        Me.btnEnviar.UseVisualStyleBackColor = True
         '
         'Label3
         '
@@ -109,6 +127,31 @@ Partial Class Form1
         Me.Label3.Size = New System.Drawing.Size(34, 13)
         Me.Label3.TabIndex = 13
         Me.Label3.Text = "Motor"
+        '
+        'txtVel
+        '
+        Me.txtVel.Location = New System.Drawing.Point(54, 44)
+        Me.txtVel.Name = "txtVel"
+        Me.txtVel.Size = New System.Drawing.Size(99, 20)
+        Me.txtVel.TabIndex = 1
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(51, 28)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(96, 13)
+        Me.Label2.TabIndex = 12
+        Me.Label2.Text = "Velocidade (0 - 5v)"
+        '
+        'cmbMotor
+        '
+        Me.cmbMotor.FormattingEnabled = True
+        Me.cmbMotor.Items.AddRange(New Object() {"Motor 1", "Motor 2", "Motor 3", "Todos"})
+        Me.cmbMotor.Location = New System.Drawing.Point(54, 83)
+        Me.cmbMotor.Name = "cmbMotor"
+        Me.cmbMotor.Size = New System.Drawing.Size(99, 21)
+        Me.cmbMotor.TabIndex = 2
         '
         'GroupBox3
         '
@@ -125,45 +168,15 @@ Partial Class Form1
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Velocidades (%)"
         '
-        'Label1
+        'lblMotor3
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(19, 48)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(63, 20)
-        Me.Label1.TabIndex = 9
-        Me.Label1.Text = "Motor 1"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(88, 48)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(63, 20)
-        Me.Label4.TabIndex = 10
-        Me.Label4.Text = "Motor 2"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(157, 48)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(63, 20)
-        Me.Label5.TabIndex = 11
-        Me.Label5.Text = "Motor 3"
-        '
-        'lblMotor1
-        '
-        Me.lblMotor1.AutoSize = True
-        Me.lblMotor1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblMotor1.Location = New System.Drawing.Point(18, 77)
-        Me.lblMotor1.Name = "lblMotor1"
-        Me.lblMotor1.Size = New System.Drawing.Size(46, 25)
-        Me.lblMotor1.TabIndex = 6
-        Me.lblMotor1.Text = "0 %"
+        Me.lblMotor3.AutoSize = True
+        Me.lblMotor3.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblMotor3.Location = New System.Drawing.Point(156, 77)
+        Me.lblMotor3.Name = "lblMotor3"
+        Me.lblMotor3.Size = New System.Drawing.Size(46, 25)
+        Me.lblMotor3.TabIndex = 8
+        Me.lblMotor3.Text = "0 %"
         '
         'lblMotor2
         '
@@ -175,61 +188,49 @@ Partial Class Form1
         Me.lblMotor2.TabIndex = 7
         Me.lblMotor2.Text = "0 %"
         '
-        'lblMotor3
+        'lblMotor1
         '
-        Me.lblMotor3.AutoSize = True
-        Me.lblMotor3.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblMotor3.Location = New System.Drawing.Point(156, 77)
-        Me.lblMotor3.Name = "lblMotor3"
-        Me.lblMotor3.Size = New System.Drawing.Size(46, 25)
-        Me.lblMotor3.TabIndex = 8
-        Me.lblMotor3.Text = "0 %"
+        Me.lblMotor1.AutoSize = True
+        Me.lblMotor1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblMotor1.Location = New System.Drawing.Point(18, 77)
+        Me.lblMotor1.Name = "lblMotor1"
+        Me.lblMotor1.Size = New System.Drawing.Size(46, 25)
+        Me.lblMotor1.TabIndex = 6
+        Me.lblMotor1.Text = "0 %"
         '
-        'btnEnviar
+        'Label5
         '
-        Me.btnEnviar.Location = New System.Drawing.Point(10, 110)
-        Me.btnEnviar.Name = "btnEnviar"
-        Me.btnEnviar.Size = New System.Drawing.Size(187, 23)
-        Me.btnEnviar.TabIndex = 3
-        Me.btnEnviar.Text = "Enviar"
-        Me.btnEnviar.UseVisualStyleBackColor = True
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(157, 48)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(63, 20)
+        Me.Label5.TabIndex = 11
+        Me.Label5.Text = "Motor 3"
         '
-        'txtRecebido
+        'Label4
         '
-        Me.txtRecebido.Enabled = False
-        Me.txtRecebido.Location = New System.Drawing.Point(66, 31)
-        Me.txtRecebido.Name = "txtRecebido"
-        Me.txtRecebido.Size = New System.Drawing.Size(254, 20)
-        Me.txtRecebido.TabIndex = 4
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(88, 48)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(63, 20)
+        Me.Label4.TabIndex = 10
+        Me.Label4.Text = "Motor 2"
         '
-        'txtEnviado
+        'Label1
         '
-        Me.txtEnviado.Enabled = False
-        Me.txtEnviado.Location = New System.Drawing.Point(66, 57)
-        Me.txtEnviado.Name = "txtEnviado"
-        Me.txtEnviado.Size = New System.Drawing.Size(254, 20)
-        Me.txtEnviado.TabIndex = 5
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(7, 34)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(53, 13)
-        Me.Label9.TabIndex = 15
-        Me.Label9.Text = "Recebido"
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(14, 60)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(46, 13)
-        Me.Label10.TabIndex = 14
-        Me.Label10.Text = "Enviado"
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(19, 48)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(63, 20)
+        Me.Label1.TabIndex = 9
+        Me.Label1.Text = "Motor 1"
         '
         'Timer1
         '
+        Me.Timer1.Enabled = True
         '
         'SerialPort1
         '

@@ -72,6 +72,10 @@ executa:
               portc.1 = 1
               portc.2 = 1
               
+              delay_ms(10)
+              
+              Usart_Write_Text(recebe)
+              
            end if
            
         end if

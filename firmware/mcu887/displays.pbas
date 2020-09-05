@@ -6,14 +6,13 @@ dim valorPorcent  as integer
 
 main:
 TRISA=%11111111
-TRISB=%00111111
-TRISC=%00000000
+TRISB=%11111111
+TRISC=%10000001
 INTCON=%00000000
 ANSEL=%00000000
 ANSELH=%00000000
 portA=0
 portB=0
-portC=0
 
 USART_INIT(9600)
 
@@ -28,7 +27,7 @@ executa:
 
            Usart_Write_Text(valorConvertido)
            delay_ms(5)
-           USART_Write("/")
+           USART_Write_Text("/")
            delay_ms(5)
         end if
 
