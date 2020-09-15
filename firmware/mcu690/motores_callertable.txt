@@ -1,4 +1,26 @@
 main
+	Double2Byte
+		SETIOV3224
+	Div_32x32_FP
+		SETFUN32
+		SETFOV32
+		RES032
+		SETFDZ32
+	Mul_32x32_FP
+		SETFUN32
+		SETFOV32
+		RES032
+	Byte2Double
+		NRM4032
+			SETFOV32
+			FIXSIGN32
+			SETFUN32
+			RES032
+	Int2Double
+		NRM3232
+			FIXSIGN32
+			SETFUN32
+			RES032
 	USART_Init
 	Usart_Write_Text
 		USART_Write

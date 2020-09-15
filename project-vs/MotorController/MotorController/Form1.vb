@@ -31,21 +31,21 @@ ErroAbertura:
             lblMotor1.Text = porcentagem.ToString + " %"
             txtEnviado.Text = ""
 
-            stringAEnviar = (valorConvertido + 1000).ToString + "-" + porcentagem.ToString + "/"
+            stringAEnviar = "1" + textoInserido + "/"
             txtEnviado.Text = stringAEnviar
             SerialPort1.Write(stringAEnviar)
         ElseIf cmbMotor.SelectedIndex = 1 Then
             lblMotor2.Text = porcentagem.ToString + " %"
             txtEnviado.Text = ""
 
-            stringAEnviar = (valorConvertido + 2000).ToString + "-" + porcentagem.ToString + "/"
+            stringAEnviar = "2" + textoInserido + "/"
             txtEnviado.Text = stringAEnviar
             SerialPort1.Write(stringAEnviar)
         ElseIf cmbMotor.SelectedIndex = 2 Then
             lblMotor3.Text = porcentagem.ToString + " %"
             txtEnviado.Text = ""
 
-            stringAEnviar = (valorConvertido + 3000).ToString + "-" + porcentagem.ToString + "/"
+            stringAEnviar = "3" + textoInserido + "/"
             txtEnviado.Text = stringAEnviar
             SerialPort1.Write(stringAEnviar)
         ElseIf cmbMotor.SelectedIndex = 3 Then
@@ -54,7 +54,7 @@ ErroAbertura:
             lblMotor3.Text = porcentagem.ToString + " %"
             txtEnviado.Text = ""
 
-            stringAEnviar = (valorConvertido + 4000).ToString + "-" + porcentagem.ToString + "/"
+            stringAEnviar = "4" + textoInserido + "/"
             txtEnviado.Text = stringAEnviar
             SerialPort1.Write(stringAEnviar)
         End If

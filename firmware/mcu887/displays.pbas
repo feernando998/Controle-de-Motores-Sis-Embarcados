@@ -1,8 +1,14 @@
 program displays
 
-dim valorConvertido as string[6]
-dim porcent as string[6]
-dim valorPorcent  as integer
+dim recebe             as string[6]
+dim valorRecebido      as integer
+dim valorConvertido    as integer
+dim valorPorcent       as integer
+
+dim uni                as integer
+dim dez                as integer
+dim valorPortas        as integer
+dim escrita            as integer
 
 main:
 TRISA=%11111111
@@ -21,11 +27,76 @@ I2C_INIT(100000)
 executa:
 
         if Usart_Data_Ready() > 0 then
-           Usart_Read_Text(valorConvertido,"-")
-           Usart_Read_Text(porcent,"/")
-           valorPorcent = StrToInt(porcent)
+           Usart_Read_Text(recebe,"/")
+           valorRecebido = StrToInt(recebe)
+           
+            if (valorRecebido > 9) and (valorRecebido < 46) then
+                  if (valorRecebido >= 10) And (valorRecebido < 16) then
+                     valorRecebido = valorRecebido - 10
+                     valorConvertido = (valorRecebido * 255) / 5
+                     valorPorcent = ((valorConvertido * 100) / 255)
+                     
+                     if valorPorcent > 99 then
+                        valorPorcent = 99
+                     end if
+                     dez = valorPorcent div 10
+                     uni = valorPorcent - (dez * 10)
+                     valorPortas = dez + (uni  * 16)
+                     escrita = 0x42
+                     gosub escreve_I2C
+                  end if
+                  if (valorRecebido >= 20) And (valorRecebido < 26) then
+                     valorRecebido = valorRecebido - 20
+                     valorConvertido = (valorRecebido * 255) / 5
+                     valorPorcent = ((valorConvertido * 100) / 255)
+                     
+                     if valorPorcent > 99 then
+                        valorPorcent = 99
+                     end if
 
-           Usart_Write_Text(valorConvertido)
+                     dez = valorPorcent div 10
+                     uni = valorPorcent - (dez * 10)
+                     valorPortas = dez + (uni  * 16)
+                     escrita = 0x44
+                     gosub escreve_I2C
+                  end if
+                  if (valorRecebido >= 30) And (valorRecebido < 36) then
+                     valorRecebido = valorRecebido - 30
+                     valorConvertido = (valorRecebido * 255) / 5
+                     valorPorcent = ((valorConvertido * 100) / 255)
+                     
+                     if valorPorcent > 99 then
+                        valorPorcent = 99
+                     end if
+
+                     dez = valorPorcent div 10
+                     uni = valorPorcent - (dez * 10)
+                     valorPortas = dez + (uni  * 16)
+                     escrita = 0x46
+                     gosub escreve_I2C
+                  end if
+                  if (valorRecebido >= 40) And (valorRecebido < 46) then
+                     valorRecebido = valorRecebido - 40
+                     valorConvertido = (valorRecebido * 255) / 5
+                     valorPorcent = ((valorConvertido * 100) / 255)
+                     
+                     if valorPorcent > 99 then
+                        valorPorcent = 99
+                     end if
+
+                     dez = valorPorcent div 10
+                     uni = valorPorcent - (dez * 10)
+                     valorPortas = dez + (uni  * 16)
+                      escrita = 0x42
+                      gosub escreve_I2C
+                      escrita = 0x44
+                      gosub escreve_I2C
+                      escrita = 0x46
+                      gosub escreve_I2C
+                  end if
+            end if
+
+           Usart_Write_Text(recebe)
            delay_ms(5)
            USART_Write_Text("/")
            delay_ms(5)
@@ -35,6 +106,11 @@ executa:
         
 escreve_I2C:
 
+       I2C_Start
+       I2C_Wr(escrita)
+       I2C_Wr(valorPortas)
+       I2C_Stop
+       delay_ms(10)
 
        return
 end.

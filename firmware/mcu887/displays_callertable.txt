@@ -1,6 +1,13 @@
 main
+	Div_16x16_S
+		Div_16x16_S_L
+	Mul_16x16_S
 	I2C_Init
 	USART_Init
+	I2C_Stop
+	I2C_Wr
+	I2C_Start
+		I2C_Is_Idle
 	Usart_Write_Text
 		USART_Write
 	StrToInt

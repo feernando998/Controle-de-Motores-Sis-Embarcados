@@ -2,6 +2,7 @@ program motores
 
 dim recebe as string[6]
 dim valor  as integer
+dim valorConvertido as float
 dim mcp    as integer
 
 main:
@@ -29,25 +30,28 @@ executa:
         if Usart_Data_Ready() > 0 then
            Usart_Read_Text(recebe,"/")
            valor = StrToInt(recebe)
+
            
-           if (valor > 999) and (valor < 4256) then
+           if (valor > 9) and (valor < 46) then
            
-              if (valor >= 1000) And (valor < 1256) then
+              if (valor >= 10) And (valor < 16) then
                  mcp = 1
-                 valor = valor - 1000
+                 valor = valor - 10
               end if
-              if (valor >= 2000) And (valor < 2256) then
+              if (valor >= 20) And (valor < 26) then
                  mcp = 2
-                 valor = valor - 2000
+                 valor = valor - 20
               end if
-              if (valor >= 3000) And (valor < 3256) then
+              if (valor >= 30) And (valor < 36) then
                  mcp = 3
-                 valor = valor - 3000
+                 valor = valor - 30
               end if
-              if (valor >= 4000) And (valor < 4256) then
+              if (valor >= 40) And (valor < 46) then
                   mcp = 4
-                  valor = valor - 4000
+                  valor = valor - 40
               end if
+              
+              valorConvertido = (valor * 255) / 5
               
               if mcp = 1 then
                  clearbit(portc,0)
@@ -66,7 +70,7 @@ executa:
               end if
               
               spi_write(17)
-              spi_Write(valor)
+              spi_Write(valorConvertido)
               
               portc.0 = 1
               portc.1 = 1
