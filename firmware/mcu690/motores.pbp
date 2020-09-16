@@ -27,10 +27,10 @@ Value0=C:\Users\pedro\OneDrive\faculdade\10_Semestre\Projeto de Sistemas Embarca
 [TabIndex]
 Value=0
 [SearchPath]
-Count=4
+Count=3
 Value0=C:\Program Files (x86)\Mikroelektronika\mikroBasic\Defs\
-Value1=C:\Program Files (x86)\Mikroelektronika\mikroBasic\Uses\p16\
-Value2=C:\Users\pedro\OneDrive\faculdade\10_Semestre\Projeto de Sistemas Embarcados\Controle-de-Motores-Sis-Embarcados\firmware\mcu690\
+Value1=C:\Users\pedro\OneDrive\faculdade\10_Semestre\Projeto de Sistemas Embarcados\Controle-de-Motores-Sis-Embarcados\firmware\mcu690\
+Value2=C:\Program Files (x86)\Mikroelektronika\mikroBasic\Uses\p16\
 Value3=D:\Faculdade\10º Termo\Projeto de Sistemas Embarcados II\Trabalho II\Controle-de-Motores-Sis-Embarcados\firmware\mcu690\
 [EEPROMinfo]
 isused=0

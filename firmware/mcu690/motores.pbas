@@ -5,6 +5,8 @@ dim valor  as integer
 dim valorConvertido as float
 dim mcp    as integer
 
+dim motor as byte
+
 main:
 TRISA=%11111111
 TRISB=%00111111
@@ -30,59 +32,46 @@ executa:
         if Usart_Data_Ready() > 0 then
            Usart_Read_Text(recebe,"/")
            valor = StrToInt(recebe)
-
            
            if (valor > 9) and (valor < 46) then
            
               if (valor >= 10) And (valor < 16) then
-                 mcp = 1
+                 clearbit(portc,0)
                  valor = valor - 10
               end if
               if (valor >= 20) And (valor < 26) then
-                 mcp = 2
+                 clearbit(portc,1)
                  valor = valor - 20
               end if
               if (valor >= 30) And (valor < 36) then
-                 mcp = 3
+                 clearbit(portc,2)
                  valor = valor - 30
               end if
               if (valor >= 40) And (valor < 46) then
-                  mcp = 4
-                  valor = valor - 40
-              end if
-              
-              valorConvertido = (valor * 255) / 5
-              
-              if mcp = 1 then
-                 clearbit(portc,0)
-              end if
-              if mcp = 2 then
-                 clearbit(portc,1)
-              end if
-              if mcp = 3 then
-                 clearbit(portc,2)
-              end if
-              
-              if mcp = 4 then
                  portc.0 = 0
                  portc.1 = 0
                  portc.2 = 0
+                 valor = valor - 40
               end if
               
+              valorConvertido = (valor * 255) / 5
+
               spi_write(17)
               spi_Write(valorConvertido)
-              
+
               portc.0 = 1
               portc.1 = 1
               portc.2 = 1
-              
+
               delay_ms(10)
-              
-              Usart_Write_Text(recebe)
               
            end if
            
+           Usart_Write_Text(recebe)
+           
         end if
 
+
         goto executa
+
 end.
