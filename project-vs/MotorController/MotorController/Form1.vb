@@ -14,34 +14,35 @@ ErroAbertura:
     Private Sub btnEnviar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEnviar.Click
         '5V     - 255
 
-        Dim textoInserido As String
         Dim stringAEnviar As String
+        Dim valor As Double
+        Dim valorConvertido As Integer
 
-        textoInserido = txtVel.Text
-
+        valor = CDbl(txtVel.Text)
+        valorConvertido = (valor * 255) / 5
 
         If cmbMotor.SelectedIndex = 0 Then
             txtEnviado.Text = ""
 
-            stringAEnviar = "1" + textoInserido + "/"
+            stringAEnviar = (valorConvertido + 1000).ToString + "/"
             txtEnviado.Text = stringAEnviar
             SerialPort1.Write(stringAEnviar)
         ElseIf cmbMotor.SelectedIndex = 1 Then
             txtEnviado.Text = ""
 
-            stringAEnviar = "2" + textoInserido + "/"
+            stringAEnviar = (valorConvertido + 2000).ToString + "/"
             txtEnviado.Text = stringAEnviar
             SerialPort1.Write(stringAEnviar)
         ElseIf cmbMotor.SelectedIndex = 2 Then
             txtEnviado.Text = ""
 
-            stringAEnviar = "3" + textoInserido + "/"
+            stringAEnviar = (valorConvertido + 3000).ToString + "/"
             txtEnviado.Text = stringAEnviar
             SerialPort1.Write(stringAEnviar)
         ElseIf cmbMotor.SelectedIndex = 3 Then
             txtEnviado.Text = ""
 
-            stringAEnviar = "4" + textoInserido + "/"
+            stringAEnviar = (valorConvertido + 4000).ToString + "/"
             txtEnviado.Text = stringAEnviar
             SerialPort1.Write(stringAEnviar)
         End If
@@ -49,47 +50,65 @@ ErroAbertura:
     End Sub
 
     Private Sub Timer1_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer1.Tick
-        Dim valorRecebido As Integer
-        Dim voltagem As Integer
+        '255    - 5v
+        'valor  - x
+        Dim valorRecebido As Double
+        Dim voltagem As Double
         Dim valorConvertido As Integer
         Dim valorPorcent As Integer
 
         If SerialPort1.BytesToRead > 0 Then
             txtRecebido.Text = ""
             txtRecebido.Text = SerialPort1.ReadExisting.Trim()
-            valorRecebido = CInt(SerialPort1.ReadExisting.Trim())
 
-            If valorRecebido >= 10 And valorRecebido <= 15 Then
-                voltagem = valorRecebido - 10
-                valorConvertido = (voltagem * 255) / 5
+            valorRecebido = CInt(txtRecebido.Text)
+
+            If valorRecebido >= 1000 And valorRecebido < 1256 Then
+                valorConvertido = valorRecebido - 1000
+                voltagem = (valorConvertido * 5) / 255
                 valorPorcent = ((valorConvertido * 100) / 255)
 
                 lblMotor1.Text = valorPorcent.ToString() + " %"
+                lblValM1.Text = valorConvertido.ToString
+                lblVoltM1.Text = FormatNumber(voltagem, 2) + " v"
             End If
-            If valorRecebido >= 20 And valorRecebido <= 25 Then
-                voltagem = valorRecebido - 20
-                valorConvertido = (voltagem * 255) / 5
+            If valorRecebido >= 2000 And valorRecebido < 2256 Then
+                valorConvertido = valorRecebido - 2000
+                voltagem = (valorConvertido * 5) / 255
                 valorPorcent = ((valorConvertido * 100) / 255)
 
                 lblMotor2.Text = valorPorcent.ToString() + " %"
+                lblValM2.Text = valorConvertido.ToString
+                lblVoltM2.Text = FormatNumber(voltagem, 2) + " v"
             End If
-            If valorRecebido >= 30 And valorRecebido <= 35 Then
-                voltagem = valorRecebido - 30
-                valorConvertido = (voltagem * 255) / 5
+            If valorRecebido >= 3000 And valorRecebido < 3256 Then
+                valorConvertido = valorRecebido - 3000
+                voltagem = (valorConvertido * 5) / 255
                 valorPorcent = ((valorConvertido * 100) / 255)
 
                 lblMotor3.Text = valorPorcent.ToString() + " %"
+                lblValM3.Text = valorConvertido.ToString
+                lblVoltM3.Text = FormatNumber(voltagem, 2) + " v"
             End If
-            If valorRecebido >= 40 And valorRecebido <= 45 Then
-                voltagem = valorRecebido - 40
-                valorConvertido = (voltagem * 255) / 5
+            If valorRecebido >= 4000 And valorRecebido < 4256 Then
+                valorConvertido = valorRecebido - 4000
+                voltagem = (valorConvertido * 5) / 255
                 valorPorcent = ((valorConvertido * 100) / 255)
 
                 lblMotor1.Text = valorPorcent.ToString() + " %"
                 lblMotor2.Text = valorPorcent.ToString() + " %"
                 lblMotor3.Text = valorPorcent.ToString() + " %"
+
+                lblValM1.Text = valorConvertido.ToString
+                lblValM2.Text = valorConvertido.ToString
+                lblValM3.Text = valorConvertido.ToString
+
+                lblVoltM1.Text = FormatNumber(voltagem, 2) + " v"
+                lblVoltM2.Text = FormatNumber(voltagem, 2) + " v"
+                lblVoltM3.Text = FormatNumber(voltagem, 2) + " v"
             End If
         End If
 
     End Sub
+
 End Class

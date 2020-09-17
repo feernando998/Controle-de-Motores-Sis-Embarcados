@@ -2,7 +2,6 @@ program displays
 
 dim recebe             as string[6]
 dim valorRecebido      as integer
-dim valorConvertido    as integer
 dim valorPorcent       as integer
 
 dim uni                as integer
@@ -30,11 +29,10 @@ executa:
            Usart_Read_Text(recebe,"/")
            valorRecebido = StrToInt(recebe)
            
-            if (valorRecebido > 9) and (valorRecebido < 46) then
-                  if (valorRecebido >= 10) And (valorRecebido < 16) then
-                     valorRecebido = valorRecebido - 10
-                     valorConvertido = (valorRecebido * 255) / 5
-                     valorPorcent = ((valorConvertido * 100) / 255)
+            if (valorRecebido > 999) and (valorRecebido < 4256) then
+                  if (valorRecebido >= 1000) And (valorRecebido < 1256) then
+                     valorRecebido = valorRecebido - 1000
+                     valorPorcent = ((valorRecebido * 100) / 255)
                      
                      if valorPorcent > 99 then
                         valorPorcent = 99
@@ -45,10 +43,9 @@ executa:
                      escrita = 0x42
                      gosub escreve_I2C
                   end if
-                  if (valorRecebido >= 20) And (valorRecebido < 26) then
-                     valorRecebido = valorRecebido - 20
-                     valorConvertido = (valorRecebido * 255) / 5
-                     valorPorcent = ((valorConvertido * 100) / 255)
+                  if (valorRecebido >= 2000) And (valorRecebido < 2256) then
+                     valorRecebido = valorRecebido - 2000
+                     valorPorcent = ((valorRecebido * 100) / 255)
                      
                      if valorPorcent > 99 then
                         valorPorcent = 99
@@ -60,10 +57,9 @@ executa:
                      escrita = 0x44
                      gosub escreve_I2C
                   end if
-                  if (valorRecebido >= 30) And (valorRecebido < 36) then
-                     valorRecebido = valorRecebido - 30
-                     valorConvertido = (valorRecebido * 255) / 5
-                     valorPorcent = ((valorConvertido * 100) / 255)
+                  if (valorRecebido >= 3000) And (valorRecebido < 3256) then
+                     valorRecebido = valorRecebido - 3000
+                     valorPorcent = ((valorRecebido * 100) / 255)
                      
                      if valorPorcent > 99 then
                         valorPorcent = 99
@@ -75,10 +71,9 @@ executa:
                      escrita = 0x46
                      gosub escreve_I2C
                   end if
-                  if (valorRecebido >= 40) And (valorRecebido < 46) then
-                     valorRecebido = valorRecebido - 40
-                     valorConvertido = (valorRecebido * 255) / 5
-                     valorPorcent = ((valorConvertido * 100) / 255)
+                  if (valorRecebido >= 4000) And (valorRecebido < 4256) then
+                     valorRecebido = valorRecebido - 4000
+                     valorPorcent = ((valorRecebido * 100) / 255)
                      
                      if valorPorcent > 99 then
                         valorPorcent = 99
