@@ -10,3 +10,9 @@ C:\Users\pedro\OneDrive\faculdade\10_Semestre\Projeto de Sistemas Embarcados\Con
 D:\Faculdade\10º Termo\Projeto de Sistemas Embarcados II\Trabalho II\Controle-de-Motores-Sis-Embarcados\project-vs\MotorController\MotorController\obj\x86\Debug\MotorController.exe
 D:\Faculdade\10º Termo\Projeto de Sistemas Embarcados II\Trabalho II\Controle-de-Motores-Sis-Embarcados\project-vs\MotorController\MotorController\obj\x86\Debug\MotorController.xml
 D:\Faculdade\10º Termo\Projeto de Sistemas Embarcados II\Trabalho II\Controle-de-Motores-Sis-Embarcados\project-vs\MotorController\MotorController\obj\x86\Debug\MotorController.pdb
+D:\Faculdade\10º Termo\Projeto de Sistemas Embarcados II\Trabalho II\Controle-de-Motores-Sis-Embarcados\project-vs\MotorController\MotorController\bin\Debug\MotorController.exe
+D:\Faculdade\10º Termo\Projeto de Sistemas Embarcados II\Trabalho II\Controle-de-Motores-Sis-Embarcados\project-vs\MotorController\MotorController\bin\Debug\MotorController.pdb
+D:\Faculdade\10º Termo\Projeto de Sistemas Embarcados II\Trabalho II\Controle-de-Motores-Sis-Embarcados\project-vs\MotorController\MotorController\bin\Debug\MotorController.xml
+D:\Faculdade\10º Termo\Projeto de Sistemas Embarcados II\Trabalho II\Controle-de-Motores-Sis-Embarcados\project-vs\MotorController\MotorController\obj\x86\Debug\MotorController.Form1.resources
+D:\Faculdade\10º Termo\Projeto de Sistemas Embarcados II\Trabalho II\Controle-de-Motores-Sis-Embarcados\project-vs\MotorController\MotorController\obj\x86\Debug\MotorController.Resources.resources
+D:\Faculdade\10º Termo\Projeto de Sistemas Embarcados II\Trabalho II\Controle-de-Motores-Sis-Embarcados\project-vs\MotorController\MotorController\obj\x86\Debug\MotorController.vbproj.GenerateResource.Cache
